@@ -1,14 +1,11 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Jokes</h1>
-
-<div id="jokes">
-  <% @jokes.each do |joke| %>
-    <%= render joke %>
-    <p>
-      <%= link_to "Show this joke", joke %>
-    </p>
-  <% end %>
+<div id="jokes" class="container mx-auto p-4">
+  <%= link_to 'login', qr_login_path, data: { turbo_frame: "modal" } %>
+  <h1>Home</h1>
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+    <% @jokes.each do |joke| %>
+      <%= render partial: 'jokes/joke', locals: { joke: joke } %>
+    <% end %>
+  </div>
 </div>
-
-<%= link_to "New joke", new_joke_path %>
