@@ -1,1 +1,9 @@
-<%= link_to 'login', qr_login_path, data: { turbo_frame: "modal" } %>
+<%= link_to 'cerrar session', session_path(Current.user.id), data: {
+  turbo_method: :delete,
+}, class: "mx-2 text-teal-500 font-bold" if Current.user %>
+<%= link_to 'perfil', users_path(Current.user.id) if Current.user %>
+<% if Current.user %>
+  <%= Current.user.username %>
+<% else %>
+  <%= link_to 'login', qr_login_path, data: { turbo_frame: "modal" } %>
+<% end %>
