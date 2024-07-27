@@ -70,3 +70,8 @@ group :test do
   gem "selenium-webdriver"
 
 end
+
+gem "tailwindcss-rails", "~> 2.6"
+gem 'rqrcode', '~> 2.2'
+gem 'bech32', '~> 1.4', '>= 1.4.2'
+gem 'rbsecp256k1', '~> 5.0'
