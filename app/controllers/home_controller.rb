@@ -1,6 +1,8 @@
 class HomeController < ApplicationController
 
-  def index; end
+  def index
+    @jokes = Joke.all
+  end
 
   def qr_login
     @k1 = SecureRandom.hex(32)
