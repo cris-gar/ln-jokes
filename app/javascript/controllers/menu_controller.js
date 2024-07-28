@@ -2,10 +2,10 @@ import { Controller } from "@hotwired/stimulus";
 
 // Connects to data-controller="menu"
 export default class extends Controller {
-    static targets = ['menu'];
+    static targets = ['menu', 'items'];
 
     toggle() {
-        console.log('jiji')
-        this.menuTarget.classList.toggle("hidden");
+        this.itemsTarget.classList.toggle('translate-x-full')
+        // this.menuTarget.classList.toggle('hidden');
     }
 }

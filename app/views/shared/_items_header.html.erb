@@ -1,0 +1,8 @@
+<% if Current.user %>
+  <%= link_to 'Perfil', users_path(Current.user.id), class: "mx-2 text-teal-500 font-bold" %>
+  <%= link_to 'Cerrar sesión', session_path(Current.user.id), data: {
+    turbo_method: :delete,
+  }, class: "mx-2 text-teal-500 font-bold" %>
+<% else %>
+  <%= link_to 'login', qr_login_path, data: { turbo_frame: "modal" }, class: "mx-2 text-teal-500 font-bold" %>
+<% end %>
